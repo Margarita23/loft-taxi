@@ -1,19 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.scss';
 
 import Login from './pages/login/login';
-import Reg from './pages/reg/reg';
+import Header from './components/header/header';
+import Profile from './pages/profile/profile';
 
 
-
-class App extends React.Component {
+class App extends Component {
    render() {
       return (
-         <div>
+         <>
             <Login/>
-            <Reg/>
-         </div>
+            <Header/>
+            <Profile/>
+         </>
       );
    }
 }

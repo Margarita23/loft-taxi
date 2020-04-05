@@ -1,18 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Logo} from 'loft-taxi-mui-theme';
 
-class Header extends React.Component {
+const PAGES = {
+  map: <></>,
+  profile: <></>,
+  logout: <></>,
+}
+
+class Header extends Component {
+
   render() {
     return (
-      <div class="wrapper">
-        <div class="container">
-          <div class="header__block">
+      <div className="wrapper">
+        <div className="container">
+          <div className="header__block">
             <Logo></Logo>
-            <nav class="menu__nav">
-              <ul class="menu__list">
-                <li class="menu__item">Карта</li>
-                <li class="menu__item">Профиль</li>
-                <li class="menu__item">Выйти</li>
+            <nav className="menu__nav">
+              <ul className="menu__list">
+                <li className="menu__item">Карта</li>
+                <li className="menu__item">Профиль</li>
+                <li className="menu__item">Выйти</li>
               </ul>
             </nav>
           </div>

@@ -1,0 +1,42 @@
+.container.container__profile {
+    background-color: white;
+    padding: 60px 75px 70px;
+    border: 1px solid black;
+}
+
+.profile__info {
+    display: flex;
+    justify-content: center; 
+}
+
+.profile__title, .profile__sub-title {
+    text-align: center;
+}
+
+.profile__block {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px rgba(0,0,0, 0.3);
+    width: 385px;
+    border-radius: 10px;
+    padding: 30px;
+
+    &:first-child {
+        margin-right: 30px;
+    }
+}
+
+.profile__sub-block {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+
+    &:last-child {
+        padding-bottom: 0px;
+    }
+}
+
+.profile__input[type=text], textarea {
+    width: 320px;
+    outline: none;
+}

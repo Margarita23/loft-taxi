@@ -1,26 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 
+import { Button, Input, Link, FormLabel} from '@material-ui/core';
+import Reg from '../reg/reg';
 
-import {Logo, MCIcon} from 'loft-taxi-mui-theme';
-import { Button, Input, Link, FormLabel, FormHelperText} from '@material-ui/core';
+class Login extends Component {
 
+   goToReg = () => {
+        return (
+            <Reg></Reg>
+        );
+   }
 
-class Login extends React.Component {
     render() {
        return (
-          <div>
-             <div class="login__container">
-                <div class="container__form">
-                    <h3 class="login__title">Войти</h3>
-                    <div class="register__block">
-                        Новый пользователь? <Link>Зарегестрируйтесь</Link>   
+          <>
+             <div className="login__container">
+                <div className="container__form">
+                    <h3 className="login__title">Войти</h3>
+                    <div className="register__block">
+                        Новый пользователь? <Link onClick={() => {console.log("Hello"); this.goToReg()}}>Зарегестрируйтесь</Link>   
                     </div>
-                    <div class="inputs__blocks">
-                        <div class="login__block">
+                    <div className="inputs__blocks">
+                        <div className="login__block">
                             <FormLabel>Имя пользователя</FormLabel>
                             <Input></Input>
                         </div>
-                        <div class="pass__block">
+                        <div className="pass__block">
                             <FormLabel>Пароль&#42;</FormLabel>
                             <Input></Input>
                         </div>
@@ -28,7 +33,7 @@ class Login extends React.Component {
                     <Button variant="contained" color="primary">Войти</Button>
                 </div>
              </div>
-          </div>
+          </>
        );
     }
 }

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, Input, Link, FormLabel} from '@material-ui/core';
-import {Logo, MCIcon} from 'loft-taxi-mui-theme';
 
-class Reg extends React.Component {
+class Reg extends Component {
   render() {
     return (
       <div>
