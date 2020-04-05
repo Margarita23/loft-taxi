@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Logo} from 'loft-taxi-mui-theme';
+import {Link} from '@material-ui/core';
 
 const PAGES = {
   map: <></>,
@@ -17,9 +18,9 @@ class Header extends Component {
             <Logo></Logo>
             <nav className="menu__nav">
               <ul className="menu__list">
-                <li className="menu__item">Карта</li>
-                <li className="menu__item">Профиль</li>
-                <li className="menu__item">Выйти</li>
+                <li className="menu__item"><Link>Карта</Link></li>
+                <li className="menu__item"><Link>Профиль</Link></li>
+                <li className="menu__item"><Link>Выйти</Link></li>
               </ul>
             </nav>
           </div>
