@@ -4,7 +4,7 @@ import './App.scss';
 
 import Login from './pages/login/login';
 import Reg from './pages/reg/reg';
-import Header from './components/header/header';
+
 
 
 class App extends React.Component {
@@ -13,7 +13,6 @@ class App extends React.Component {
          <div>
             <Login/>
             <Reg/>
-            <Header/>
          </div>
       );
    }
