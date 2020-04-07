@@ -31,11 +31,16 @@ class Login extends Component {
                         </div>
                     </div>
                     <Button variant="contained" color="primary">Войти</Button>
+                    <button onClick={() => { this.props.navigateTo("reg")}}>Запустить бумеранг</button>
                 </div>
              </div>
           </>
        );
     }
 }
+
+Login.defaultProps = {
+    name: 'Rita',
+};
 
 export default Login;

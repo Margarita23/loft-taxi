@@ -3,9 +3,9 @@ import {Logo} from 'loft-taxi-mui-theme';
 import {Link} from '@material-ui/core';
 
 const PAGES = {
-  map: <></>,
-  profile: <></>,
-  logout: <></>,
+  map: <>Map</>,
+  profile: <>Profile</>,
+  logout: <>LogOUT</>,
 }
 
 class Header extends Component {
