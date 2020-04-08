@@ -9,7 +9,7 @@ class Reg extends Component {
           <div className="container__form">
             <h3 className="reg__title">Регистрация</h3>
             <div className="login__block">
-              Уже зарегистрирован? <Link>Войти</Link>   
+              Уже зарегистрирован? <Link onClick={() => { this.props.navigateTo("login")}}>Войти</Link>   
             </div>
             <div className="inputs__blocks">
               <div className="email__block">
