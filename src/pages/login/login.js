@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
-import { Button, Input, Link, FormLabel} from '@material-ui/core';
+import {Button, Input, Link} from '@material-ui/core';
+import {Logo} from 'loft-taxi-mui-theme';
 
 class Login extends Component {
 
@@ -8,22 +9,23 @@ class Login extends Component {
        return (
           <>
              <div className="login__container">
-                <div className="container__form">
+                <Logo white></Logo>
+                <div className="login__form">
                     <h3 className="login__title">Войти</h3>
                     <div className="register__block">
                         Новый пользователь? <Link onClick={() => { this.props.navigateTo("reg")}}>Зарегестрируйтесь</Link>   
                     </div>
                     <div className="inputs__blocks">
                         <div className="login__block">
-                            <FormLabel>Имя пользователя</FormLabel>
+                            <label>Имя пользователя&#42;</label>
                             <Input></Input>
                         </div>
                         <div className="pass__block">
-                            <FormLabel>Пароль&#42;</FormLabel>
+                            <label>Пароль&#42;</label>
                             <Input></Input>
                         </div>
                     </div>
-                    <Button variant="contained" color="primary">Войти</Button>
+                    <Button variant="contained" color="primary" className="login__btn" onClick={() => { this.props.navigateTo("order")}}>Войти</Button>
                 </div>
              </div>
           </>
