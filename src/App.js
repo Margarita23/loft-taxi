@@ -23,12 +23,7 @@ class App extends Component {
       }
    }
    
-   Component = (
-      <>
-         <Header navigateTo={this.navigateTo}/>
-         <Profile navigateTo={this.navigateTo}/>
-      </>
-   );
+   Component = <Login navigateTo={this.navigateTo}/>;
 
    render() {      
       return (
