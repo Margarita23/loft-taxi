@@ -1,3 +1,7 @@
+.header__wrapper {
+    background-color: white;
+}
+
 .header__block {
     display: flex;
     align-items: center;
@@ -11,10 +15,11 @@
     list-style-type: none;
 }
 
-.menu__item {
-    margin-right: 40px;
-
-    &:last-child {
-        margin-right: 0px;
+.header__link {
+    
+    &.MuiButton-text {
+        padding: 10px 15px;
+        
     }
+
 }

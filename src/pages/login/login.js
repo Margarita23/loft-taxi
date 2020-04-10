@@ -25,7 +25,7 @@ class Login extends Component {
                             <Input></Input>
                         </div>
                     </div>
-                    <Button variant="contained" color="primary" className="login__btn" onClick={() => { this.props.navigateTo("order")}}>Войти</Button>
+                    <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { this.props.navigateTo("order")}}>Войти</Button>
                 </div>
              </div>
           </>

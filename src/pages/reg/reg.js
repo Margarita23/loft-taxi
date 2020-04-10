@@ -33,7 +33,7 @@ class Reg extends Component {
                 <Input></Input>
               </div>
             </div>
-            <Button variant="contained" color="primary" className="reg__btn">Зарегистрироваться</Button>
+            <Button variant="contained" color="primary" className="btn reg__btn">Зарегистрироваться</Button>
           </div>
         </div>
       </>
