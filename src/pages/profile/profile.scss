@@ -72,6 +72,7 @@
     width: 385px;
     border-radius: 10px;
     padding: 30px;
+    position: relative;
 
     font-size: 15px;
 // line-height: 99px;
@@ -199,5 +200,64 @@
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
         background-color: #fff;
+    }
+}
+
+.profile__eye-container {
+    display: flex;
+    position: absolute;
+    top: 40px;
+    left: 88px;
+    width: 66px;
+}
+
+.profile__btn-show {
+    width: 28px;
+    height: 20px;
+    background-image: url(../../assets/icons/eye.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.profile__btn-notshow {
+    width: 32px;
+    height: 22px;
+    background-image: url(../../assets/icons/no-eye.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.profile__input--name {
+    font-size: 24px;
+    color: #323232;
+// font-family: "Adobe Clean";
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+input.profile__input--number::-webkit-outer-spin-button ,input.profile__input--number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.mc-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+
+    &.MuiIcon-root {
+        width: 40px;
+        height: 25px;
+    }
+
+    & img {
+        height: 100%;
+        width: auto;
     }
 }

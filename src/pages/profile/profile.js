@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import {MCIcon} from 'loft-taxi-mui-theme';
 import { Button, Input, Link, FormLabel} from '@material-ui/core';
 
 class Profile extends Component {
@@ -13,9 +13,10 @@ class Profile extends Component {
               <p className="profile__sub-title">Способ оплаты</p>
               <div className="profile__info">
                 <div className="profile__block">
+                  <MCIcon className="mc-icon"></MCIcon>
                   <div className="profile__sub-block">
                     <label>Номер карты:</label>
-                    <input className="profile__input"></input>
+                    <input className="profile__input profile__input--number" type="number"></input>
                     <div className="profile__btn-delete"></div>
                   </div>
                   <div className="profile__sub-block">
@@ -27,19 +28,22 @@ class Profile extends Component {
                 <div className="profile__block">
                   <div className="profile__sub-block">
                     <label>Имя владельца:</label>
-                    <input className="profile__input"></input>
+                    <input className="profile__input profile__input--name"></input>
                     <div className="profile__btn-delete"></div>
                   </div>
                   <div className="profile__sub-block">
                     <label>CVV: 
                       <div className="profile__cvv-question">
-                        <div class="cvv-question__explanation">
+                        <div className="cvv-question__explanation">
                           3 последние цифры на оборотной стороне карты
                         </div>
                       </div>
                     </label>  
                     <input className="profile__input profile__input--short"></input>
-                    <div className="profile__btn-delete"></div>
+                    <div className="profile__eye-container">
+                      <div className="profile__btn-show"></div>
+                      <div className="profile__btn-notshow"></div>
+                    </div>
                   </div>
                 </div>
               </div>
