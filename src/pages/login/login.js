@@ -7,8 +7,7 @@ class Login extends Component {
 
     render() {
        return (
-          <>
-             <div className="login__container">
+            <div className="login__container">
                 <Logo white></Logo>
                 <div className="login__form">
                     <h3 className="login__title">Войти</h3>
@@ -27,8 +26,7 @@ class Login extends Component {
                     </div>
                     <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { this.props.navigateTo("order")}}>Войти</Button>
                 </div>
-             </div>
-          </>
+            </div>
        );
     }
 }

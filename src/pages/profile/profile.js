@@ -2,10 +2,13 @@ import React, {Component} from "react";
 import {MCIcon} from 'loft-taxi-mui-theme';
 import { Button, Input, Link, FormLabel} from '@material-ui/core';
 
+import Header from "../../components/header/header.js";
+
 class Profile extends Component {
   render() {
     return (
       <>
+        <Header navigateTo={this.props.navigateTo}/>
         <div className="wrapper profile__wrapper">
           <div className="container profile__container">
             <div className="profile__box">

@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import {Button, Input} from '@material-ui/core';
 
+import Header from "../../components/header/header.js";
+
 class Order extends Component {
+
     render() {
         return (
-            <>  
+            <>
+                <Header navigateTo={this.props.navigateTo}/>
                 <div className="wrapper order__wrapper">
                     <div className="container">
                         <div className="order__form">
