@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Logo } from 'loft-taxi-mui-theme';
 import Button from '@material-ui/core/Button';
 
+import Menu from "../../components/menu/menu";
+
 class Header extends Component {
 
   render() {
@@ -10,18 +12,8 @@ class Header extends Component {
         <div className="container">
           <div className="header__block">
             <Logo></Logo>
-            <nav className="menu__nav">
-              <ul className="menu__list">
-                <li className="menu__item">
-                  <Button className="header__link" onClick={() => {this.props.navigateTo("order")}}>Карта</Button>
-                </li>
-                <li className="menu__item">
-                  <Button className="header__link" onClick={() => {this.props.navigateTo("profile")}}>Профиль</Button>
-                </li>
-                <li className="menu__item">
-                  <Button className="header__link" onClick={() => {this.props.navigateTo("login")}}>Выйти</Button>
-                </li>
-              </ul>
+            <nav className="menu__nav" id="header__menu">
+              <Menu className="myMenu" parentId="menu__nav" navigateTo={this.props.navigateTo}></Menu>
             </nav>
           </div>
         </div>

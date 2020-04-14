@@ -6,26 +6,29 @@ import Reg from './pages/reg/reg';
 import Order from './pages/order/order';
 import Profile from './pages/profile/profile';
 
+const pages = {
+   login: "login",
+   reg: "reg",
+   order: "order",
+   profile: "profile"
+}
+
 class App extends Component {
+   state = { currentPage: pages.login };
    
    navigateTo = (page) => {
       this.setState({ currentPage: page});
-      
-      switch(page){
-         case 'login' : return this.Component = <Login navigateTo={this.navigateTo}/>;
-         case 'reg' : return  this.Component = <Reg navigateTo={this.navigateTo}/>;
-         case 'order' : return  this.Component = <Order navigateTo={this.navigateTo}/>;
-         case 'profile' : return  this.Component = <Profile navigateTo={this.navigateTo}/>;
-         default : break;
-      }
    }
-   
-   Component = <Login navigateTo={this.navigateTo}/>;
 
-   render() {      
-      return (
-         this.Component
-      );
+   render() {
+      const {login, reg, order, profile} = pages;        
+      switch(this.state.currentPage){
+         case login : return <Login navigateTo={this.navigateTo}/>;
+         case reg : return  <Reg navigateTo={this.navigateTo}/>;
+         case order : return  <Order navigateTo={this.navigateTo}/>;
+         case profile : return  <Profile navigateTo={this.navigateTo}/>;
+         default : return null;
+      }
    }
 }
 
