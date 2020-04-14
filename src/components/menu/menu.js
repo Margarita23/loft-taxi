@@ -18,7 +18,5 @@ export default function Menu(props){
             )}
         </ul>
     )
-    
-    
     return menuElements;
 }
