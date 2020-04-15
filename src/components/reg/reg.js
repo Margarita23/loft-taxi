@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
+import React from "react";
+
 import {Button, Input, Link, FormLabel} from '@material-ui/core';
 import {Logo} from 'loft-taxi-mui-theme';
 
-class Reg extends Component {
-  render() {
+export default function Reg(props) {
+    
+    const {changeForm, navigateTo} = props;
+
     return (
-      <div className="reg__container">
-        <Logo white></Logo>
         <div className="reg__form">
           <h3 className="reg__title">Регистрация</h3>
           <div className="to-login__block">
-            Уже зарегистрирован? <Link onClick={() => { this.props.navigateTo("login")}}>Войти</Link>   
+            Уже зарегистрирован? <Link onClick={() => { changeForm("login")}}>Войти</Link>   
           </div>
           <div className="inputs__blocks">
             <div className="email__block">
@@ -32,11 +33,7 @@ class Reg extends Component {
               <Input></Input>
             </div>
           </div>
-          <Button variant="contained" color="primary" className="btn reg__btn">Зарегистрироваться</Button>
+          <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { navigateTo("order") }}>Зарегистрироваться</Button>
         </div>
-      </div>
-    );
-  }
+    )
 }
-
-export default Reg;

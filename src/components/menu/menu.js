@@ -4,11 +4,10 @@ import Button from '@material-ui/core/Button';
 let menu = {
     order: "Карта",
     profile: "Профиль",
-    login: "Выйти"
-  }
+    signin: "Выйти"
+}
 
 export default function Menu(props){
-
     let menuElements = (
         <ul className="menu__list">
             {Object.entries(menu).map(( item, index ) => 
