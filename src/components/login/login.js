@@ -1,7 +1,5 @@
 import React from "react";
-
 import {Button, Input, Link} from '@material-ui/core';
-import {Logo} from 'loft-taxi-mui-theme';
 
 export default function Login(props) {
 

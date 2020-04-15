@@ -16,8 +16,6 @@ class SignIn extends Component {
 
     changeForm = (form) => {
         this.setState({signInForm: form});
-        console.log("this.state");
-        console.log(form);
     }
 
     render() {
@@ -28,7 +26,7 @@ class SignIn extends Component {
         } else if (this.state.signInForm === reg){
             trueForm = <Reg navigateTo={this.props.navigateTo} changeForm={this.changeForm}></Reg>
         }
-        
+
         return (
             <div className="login__container">
                 <Logo white></Logo>

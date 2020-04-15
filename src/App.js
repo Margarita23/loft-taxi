@@ -16,8 +16,6 @@ class App extends Component {
    
    navigateTo = (page) => {
       this.setState({ currentPage: page});
-      console.log("state");
-      console.log(this.state.currentPage);
    }
 
    render() {
