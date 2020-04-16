@@ -18,13 +18,23 @@ class SignIn extends Component {
         this.setState({signInForm: form});
     }
 
+    createUser = (newUser, nextPage) => {
+        console.log("create new User");
+        this.props.navigateTo(nextPage);
+    }
+
+    authenticate = (user, nextPage) => {
+        console.log("authenticate User");
+        this.props.navigateTo(nextPage);
+    }
+
     render() {
         const {login, reg} = forms;
         let trueForm;
         if(this.state.signInForm === login){
-            trueForm = <Login navigateTo={this.props.navigateTo} changeForm={this.changeForm}></Login>
+            trueForm = <Login authenticate={this.authenticate} changeForm={this.changeForm}></Login>
         } else if (this.state.signInForm === reg){
-            trueForm = <Reg navigateTo={this.props.navigateTo} changeForm={this.changeForm}></Reg>
+            trueForm = <Reg createUser={this.createUser} changeForm={this.changeForm}></Reg>
         }
 
         return (

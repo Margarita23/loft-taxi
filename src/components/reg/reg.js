@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 
 export default function Reg(props) {
     
-    const {changeForm, navigateTo} = props;
+    const {changeForm, createUser, email, firstName, lastName, password} = props;
+
+    let newUser = {email, firstName, lastName, password};
 
     return (
+        
         <div className="reg__form">
           <h3 className="reg__title">Регистрация</h3>
           <div className="to-login__block">
@@ -15,24 +18,24 @@ export default function Reg(props) {
           <div className="inputs__blocks">
             <div className="email__block">
               <FormLabel>Адрес электронной почты</FormLabel>
-              <Input></Input>
+              <Input email={email}></Input>
             </div>
             <div className="name__block">
               <div className="name__sub-block">
                 <FormLabel>Имя</FormLabel>
-                <Input></Input>
+                <Input firstName={firstName}></Input>
               </div>
               <div className="surname__sub-block">
                 <FormLabel>Фамилия</FormLabel>
-                <Input></Input>
+                <Input lastName={lastName}></Input>
               </div>
             </div>
             <div className="pass__block">
               <FormLabel>Пароль&#42;</FormLabel>
-              <Input></Input>
+              <Input password={password}></Input>
             </div>
           </div>
-          <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { navigateTo("order") }}>Зарегистрироваться</Button>
+          <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { createUser(newUser, "order") }}>Зарегистрироваться</Button>
         </div>
     )
 }

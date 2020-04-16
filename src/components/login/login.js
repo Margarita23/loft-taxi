@@ -1,9 +1,14 @@
 import React from "react";
 import {Button, Input, Link} from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 export default function Login(props) {
 
-    const {changeForm, navigateTo} = props;
+    const {changeForm, authenticate} = props;
+    const user = {
+        login: "",
+        password: ""
+    }
     
     return (
         <div className="login__form">
@@ -21,7 +26,15 @@ export default function Login(props) {
                     <Input></Input>
                 </div>
             </div>
-            <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { navigateTo("order") }}>Войти</Button>
+            <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(user, "order") }}>Войти</Button>
         </div>
     )
+}
+
+Login.propTypes = {
+    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired 
+
 }
