@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Input, Link, FormLabel} from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 export default function Reg(props) {
     
@@ -34,4 +35,12 @@ export default function Reg(props) {
           <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { navigateTo("order") }}>Зарегистрироваться</Button>
         </div>
     )
+}
+
+Reg.propTypes = {
+    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired 
+
 }

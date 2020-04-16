@@ -2,8 +2,18 @@ import React, {Component} from 'react';
 import {Button, Input} from '@material-ui/core';
 
 import Header from "../../components/header/header.js";
+import Map from "../../components/map/map";
 
 class Order extends Component {
+
+    constructor(props) {
+        super(props);
+        this.mapRef = React.createRef();
+    }
+
+    componentDidMount() {
+        console.dir(this.mapRef.current);
+    }
 
     render() {
         return (
@@ -31,7 +41,7 @@ class Order extends Component {
                             <Button variant="contained" color="primary" className="btn order__btn">Вызвать такси</Button>
                         </div>
                     </div>
-                    <div className="map__control"></div>
+                    <div className="map__control"><Map className="map" ref={this.mapRef}></Map></div>
                 </div>
             </>
         );
