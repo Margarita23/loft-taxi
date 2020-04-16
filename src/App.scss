@@ -1,0 +1,143 @@
+@import './components/header/header.scss';
+@import './pages/profile/profile.scss';
+@import './pages/order/order.scss';
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1170px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh; // ОБРАТИ ВНИМАНИЕ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  position: relative;
+  // overflow-y: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// for common styles in child componentss
+
+.login__container, .reg__container {
+  width: 100%;
+  min-height: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(./assets/background.png);
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__form, .reg__form {
+  background-color: white;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 60px 50px;
+  margin-left: 210px;
+  color: #505050;
+  position: relative;
+}
+
+.login__title, .reg__title {
+  margin: 0;
+  font-size: 36px;
+  color: #323232;
+  // font-family: "Adobe Clean";
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.register__block, .to-login__block {
+  font-size: 16px;
+  margin-bottom: 45px;
+  // font-family: "Adobe Clean";
+}
+
+.name__sub-block, .surname__sub-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.name__sub-block {
+  margin-right: 15px;
+}
+
+.name__block {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.login__block, .pass__block, .email__block, .pass__block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  & label {
+      font-size: 15px;
+      color: #747474;
+      // font-family: "Adobe Clean";
+  }
+}
+
+.btn {
+  float: right;
+
+  &.MuiButton-containedPrimary {
+      padding: 15px 55px;
+  }
+
+  & .MuiButton-label{
+      font-size: 21px;
+      color: #000000;
+  }
+}

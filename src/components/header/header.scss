@@ -1,0 +1,25 @@
+.header__wrapper {
+    background-color: white;
+}
+
+.header__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__list {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.header__link {
+    
+    &.MuiButton-text {
+        padding: 10px 15px;
+        
+    }
+
+}

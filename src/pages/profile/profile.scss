@@ -1,0 +1,263 @@
+.profile__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.profile__wrapper .map__control {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    top: 0;
+    z-index: -1;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../../assets/back-map.png);
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(50, 50, 50, 0.7);
+        top: 0;
+    }
+}
+
+.profile__container {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    margin-top: 60px;
+}
+
+.profile__box{
+    background-color: white;
+    width: 945px;
+    height: 565px;
+    border-radius: 3px;
+    padding: 55px 75px 75px 75px;
+}
+
+.profile__info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.profile__title {
+    font-size: 36px;
+    color: #323232;
+    // font-family: "Adobe Clean";
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile__title, .profile__sub-title {
+    text-align: center;
+}
+
+.profile__sub-title {
+    font-size: 16px;
+    color: #505050;
+    // font-family: "Adobe Clean";
+    margin: 0 0 50px 0;
+}
+
+.profile__block {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px rgba(0,0,0, 0.3);
+    width: 385px;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+
+    font-size: 15px;
+// line-height: 99px;
+    color: #747474;
+// font-family: "Adobe Clean";
+
+    &:first-child {
+        margin-right: 30px;
+    }
+}
+
+.profile__sub-block {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    position: relative;
+
+    &:last-child {
+        padding-bottom: 0px;
+    }
+
+    &:hover {
+        & .profile__input + .profile__btn-delete {
+            display: block;
+        }
+
+        & .profile__input--short + .profile__btn-delete {
+            display: block;
+            right: 0;
+            left: 100px;
+        }
+    }
+}
+
+.profile__input {
+    width: 100%;
+    outline: none;
+    padding: 10px 25px 10px 5px;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: #323232;
+        // font-family: "Adobe Clean";
+    
+    &:hover {
+        border-bottom: 1px solid #ffb1b1;
+    }
+}
+
+.profile__input--short {
+    width: 115px;
+}
+
+.profile__save-btn {
+    
+    &.MuiButton-root {
+        padding: 15px 50px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    & .MuiButton-label {
+        font-size: 21px;
+        color: #000000;
+        // font-family: "Adobe Clean";
+    }
+}
+
+.profile__btn-delete {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    background-image: url(../../assets/icons/profile-delete.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    cursor: pointer;
+}
+
+.profile__cvv-question {
+    vertical-align: top;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../assets/icons/question.png);
+    cursor: pointer;
+    position: relative;
+
+    &:hover .cvv-question__explanation {
+        display: block;
+    }
+}
+
+.cvv-question__explanation {
+    border-radius: 8px;
+    border: 1px solid #999999;
+    position: absolute;
+    padding: 18px 30px;        
+    font-size: 10px;
+    color: #323232;
+    background-color: #fff;
+    // font-family: "Adobe Clean";
+    text-align: center;
+    width: 135px;
+    top: 35px;
+    transform: translateX(calc(-50% + 9.5px));
+    z-index: 1;
+    display: none;
+    
+    &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-left: 1px solid #999999;
+        border-top: 1px solid #999999;
+        top: -11px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        background-color: #fff;
+    }
+}
+
+.profile__eye-container {
+    display: flex;
+    position: absolute;
+    top: 40px;
+    left: 88px;
+    width: 66px;
+}
+
+.profile__btn-show {
+    width: 28px;
+    height: 20px;
+    background-image: url(../../assets/icons/eye.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.profile__btn-notshow {
+    width: 32px;
+    height: 22px;
+    background-image: url(../../assets/icons/no-eye.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.profile__input--name {
+    font-size: 24px;
+    color: #323232;
+// font-family: "Adobe Clean";
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+input.profile__input--number::-webkit-outer-spin-button ,input.profile__input--number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.mc-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+
+    &.MuiIcon-root {
+        width: 40px;
+        height: 25px;
+    }
+
+    & img {
+        height: 100%;
+        width: auto;
+    }
+}
