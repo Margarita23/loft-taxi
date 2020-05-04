@@ -4,7 +4,7 @@ import {Button, Input} from '@material-ui/core';
 import Header from "../../components/header/header.js";
 import Map from "../../components/map/map";
 
-import AuthContext from "../../components/auth-context/auth-context";
+import authContext from "../../components/auth/auth-context";
 
 class Order extends Component {
 
@@ -19,11 +19,12 @@ class Order extends Component {
 
     render() {
         return (
-            
-            <AuthContext.Consumer>
-                {
-                    (value) => (
+
+            <authContext.Consumer>
+                {auth => (
                     <>
+                        {console.log("auth")}
+                        {console.log(auth)}
                         <Header navigateTo={this.props.navigateTo}/>
                         <div className="wrapper order__wrapper">
                             <div className="container">
@@ -50,11 +51,8 @@ class Order extends Component {
                             <div className="map__control"><Map className="map" ref={this.mapRef}></Map></div>
                         </div>
                     </>
-                    )
-                }
-                
-            </AuthContext.Consumer>
-            
+                )}
+            </authContext.Consumer>
         );
     }
 }
