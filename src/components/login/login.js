@@ -1,28 +1,20 @@
-import React, {Component} from "react";
+import React, {useContext} from "react";
 import {Button, Input, Link} from '@material-ui/core';
-import authContext from "../auth/auth-context";
+import AuthContext from "../auth/auth-context";
 
-class Login extends Component{
+function Login(props){
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: ""
-        };
-        this.handleChangeEmail = this.handleChangeEmail.bind(this);
-        this.handleChangePass = this.handleChangePass.bind(this);
+    let context = useContext(AuthContext);
+
+    let handleChangeEmail = (event) => {
+        email = event.target.value;
     }
 
-    handleChangeEmail(event){
-        this.setState({email: event.target.value});
+    let handleChangePass = (event) => {
+        password = event.target.value;
     }
 
-    handleChangePass(event){
-        this.setState({password: event.target.pass});
-    }
-
-    loginCheck(email, password, context){
+    let loginCheck = (email, password, context) => {
         let userLogged = true;
         if(userLogged) {
             context.login(email, password);
@@ -30,33 +22,27 @@ class Login extends Component{
         return context.isLoggedIn;
     }
 
-    render () {
-        let {changeForm, authenticate, email, password} = this.props;
+    let {changeForm, authenticate, email, password} = props;
 
-        return (
-            <authContext.Consumer>
-            {context => (
-                <div className="login__form">
-                    <h3 className="login__title">Войти</h3>
-                    <div className="register__block">
-                        Новый пользователь? <Link onClick={() => { changeForm("reg") }}>Зарегестрируйтесь</Link>   
-                    </div>
-                    <div className="inputs__blocks">
-                        <div className="login__block">
-                            <label>Имя пользователя&#42;</label>
-                            <Input type="text" value={this.state.email} onChange={this.handleChangeEmail}></Input>
-                        </div>
-                        <div className="pass__block">
-                            <label>Пароль&#42;</label>
-                            <Input type="password" value={password} onChange={this.handleChangePass}></Input>
-                        </div>
-                    </div>
-                    <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(this.user, this.loginCheck(email, password, context), "order") }}>Войти</Button>
+    return (
+        <div className="login__form">
+            <h3 className="login__title">Войти</h3>
+            <div className="register__block">
+                Новый пользователь? <Link onClick={() => { changeForm("reg") }}>Зарегестрируйтесь</Link>   
+            </div>
+            <div className="inputs__blocks">
+                <div className="login__block">
+                    <label>Имя пользователя&#42;</label>
+                    <Input type="text" value={email} onChange={handleChangeEmail}></Input>
                 </div>
-            )}
-            </authContext.Consumer>
-        )
-    }
+                <div className="pass__block">
+                    <label>Пароль&#42;</label>
+                    <Input type="password" value={password} onChange={handleChangePass}></Input>
+                </div>
+            </div>
+            <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(null, loginCheck(email, password, context), "order") }}>Войти</Button>
+        </div>
+    )
 }
 
 export default Login;

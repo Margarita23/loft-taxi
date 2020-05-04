@@ -76,7 +76,7 @@ class Reg extends Component {
                 <Input password={password}></Input>
               </div>
             </div>
-            <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { this.createUser(newUser, this.checkDataOfNewUser(context), "order") }}>Зарегистрироваться</Button>
+            <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { this.props.createUser(newUser, this.checkDataOfNewUser(context), "order") }}>Зарегистрироваться</Button>
           </div>
         )}
       </authContext.Consumer>
