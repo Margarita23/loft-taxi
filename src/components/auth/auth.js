@@ -6,21 +6,23 @@ import SignIn from "../../pages/signin/signin";
 class Auth extends React.Component {
 
     state = {
-        auth: false,
+        isLoggedIn: false,
         login: this.login.bind(this),
         logout: this.logout.bind(this)
     }
 
-    login(){
-        this.setState({auth: true});
+    login(email, password){
+        console.log("email - " + email);
+        console.log("password - " + password);
+        this.setState({isLoggedIn: true});
     }
 
     logout() {
-        this.setState({auth: false});
+        this.setState({isLoggedIn: false});
     }
 
     show(){
-        if(this.state.auth){
+        if(this.state.isLoggedIn){
             return <>{this.props.children}</>;
         } else {
             return <SignIn navigateTo={this.props.navigateTo}/>

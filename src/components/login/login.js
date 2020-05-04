@@ -4,16 +4,34 @@ import authContext from "../auth/auth-context";
 
 class Login extends Component{
 
-    loginCheck(context){
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "",
+            password: ""
+        };
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangePass = this.handleChangePass.bind(this);
+    }
+
+    handleChangeEmail(event){
+        this.setState({email: event.target.value});
+    }
+
+    handleChangePass(event){
+        this.setState({password: event.target.pass});
+    }
+
+    loginCheck(email, password, context){
         let userLogged = true;
         if(userLogged) {
-            context.login();
+            context.login(email, password);
         }
-        return context.auth;
+        return context.isLoggedIn;
     }
 
     render () {
-        const {changeForm, authenticate, email, password} = this.props;
+        let {changeForm, authenticate, email, password} = this.props;
 
         return (
             <authContext.Consumer>
@@ -26,14 +44,14 @@ class Login extends Component{
                     <div className="inputs__blocks">
                         <div className="login__block">
                             <label>Имя пользователя&#42;</label>
-                            <Input value={email}></Input>
+                            <Input type="text" value={this.state.email} onChange={this.handleChangeEmail}></Input>
                         </div>
                         <div className="pass__block">
                             <label>Пароль&#42;</label>
-                            <Input value={password}></Input>
+                            <Input type="password" value={password} onChange={this.handleChangePass}></Input>
                         </div>
                     </div>
-                    <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(this.user, this.loginCheck(context), "order") }}>Войти</Button>
+                    <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(this.user, this.loginCheck(email, password, context), "order") }}>Войти</Button>
                 </div>
             )}
             </authContext.Consumer>

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {MCIcon} from 'loft-taxi-mui-theme';
-import { Button} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 
 import Header from "../../components/header/header";
 
