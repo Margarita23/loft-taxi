@@ -85,7 +85,10 @@ class Reg extends Component {
 }
 
 Reg.propTypes = {
-  name: PropTypes.string
-};
+  email: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired 
+} 
 
 export default Reg;

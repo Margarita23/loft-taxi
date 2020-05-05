@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {Button, Input, Link} from '@material-ui/core';
 import AuthContext from "../auth/auth-context";
+import PropTypes from 'prop-types';
 
 function Login(props){
 
@@ -44,5 +45,10 @@ function Login(props){
         </div>
     )
 }
+
+Login.propTypes = {
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired
+} 
 
 export default Login;
