@@ -44,6 +44,7 @@ class SignIn extends Component {
         
         return (
             <div className="login__container">
+                <div data-testid="my-container">Hello</div>
                 <Logo white></Logo>
                 {trueForm}
             </div>
