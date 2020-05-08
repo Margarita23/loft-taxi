@@ -59,24 +59,24 @@ class Reg extends Component {
             <div className="inputs__blocks">
               <div className="email__block">
                 <FormLabel>Адрес электронной почты</FormLabel>
-                <Input email={email}></Input>
+                <Input data-testid="email-input" email={email}></Input>
               </div>
               <div className="name__block">
                 <div className="name__sub-block">
                   <FormLabel>Имя</FormLabel>
-                  <Input firstname={firstname}></Input>
+                  <Input data-testid="fname-input"firstname={firstname}></Input>
                 </div>
                 <div className="surname__sub-block">
                   <FormLabel>Фамилия</FormLabel>
-                  <Input lastname={lastname}></Input>
+                  <Input data-testid="lname-input" lastname={lastname}></Input>
                 </div>
               </div>
               <div className="pass__block">
                 <FormLabel>Пароль&#42;</FormLabel>
-                <Input password={password}></Input>
+                <Input data-testid="pass-input" password={password}></Input>
               </div>
             </div>
-            <Button variant="contained" color="primary" className="btn reg__btn" onClick={() => { this.props.createUser(newUser, this.checkDataOfNewUser(context), "order") }}>Зарегистрироваться</Button>
+            <Button  data-testid="auth-button" variant="contained" color="primary" className="btn reg__btn" onClick={() => { this.props.createUser(newUser, this.checkDataOfNewUser(context), "order") }}>Зарегистрироваться</Button>
           </div>
         )}
       </authContext.Consumer>
@@ -84,11 +84,11 @@ class Reg extends Component {
   }
 }
 
-Reg.propTypes = {
-  email: PropTypes.string.isRequired,
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired 
-} 
+// Reg.propTypes = {
+//   email: PropTypes.string.isRequired,
+//   firstName: PropTypes.string.isRequired,
+//   lastName: PropTypes.string.isRequired,
+//   password: PropTypes.string.isRequired 
+// }
 
 export default Reg;

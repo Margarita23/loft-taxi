@@ -3,9 +3,9 @@ import { render } from '@testing-library/react';
 import SignIn from './signin';
 
 describe("Signin", () => {
-  it("show first page - check logo on login page", () => {
+  it("show first page - check text 'Новый пользователь?' on login page", () => {
       const { getByTestId, getByText } = render(<SignIn/>);
       let comp = getByTestId("logo-container");
-    //   expect(comp("hell")).toContainElement(getByText("Hello"));
+      expect(comp).toContainElement(getByText("Новый пользователь?"));
     });
 });

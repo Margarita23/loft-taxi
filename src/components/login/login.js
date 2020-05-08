@@ -34,21 +34,21 @@ function Login(props){
             <div className="inputs__blocks">
                 <div className="login__block">
                     <label>Имя пользователя&#42;</label>
-                    <Input type="text" value={email} onChange={handleChangeEmail}></Input>
+                    <Input data-testid="email-input" type="text" value={email} onChange={handleChangeEmail}></Input>
                 </div>
                 <div className="pass__block">
                     <label>Пароль&#42;</label>
-                    <Input type="password" value={password} onChange={handleChangePass}></Input>
+                    <Input data-testid="password-input" type="password" value={password} onChange={handleChangePass}></Input>
                 </div>
             </div>
-            <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { authenticate(null, loginCheck(email, password, context), "order") }}>Войти</Button>
+            <Button variant="contained" color="primary" className="btn login__btn" data-testid="button-login" onClick={() => { authenticate(null, loginCheck(email, password, context), "order") }}>Войти</Button>
         </div>
     )
 }
 
-Login.propTypes = {
-    email: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired
-} 
+// Login.propTypes = {
+//     email: PropTypes.string.isRequired,
+//     password: PropTypes.string.isRequired
+// } 
 
 export default Login;

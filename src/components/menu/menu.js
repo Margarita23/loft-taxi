@@ -11,9 +11,9 @@ export default function Menu(props){
     let menuElements = (
         <authContext.Consumer>
             {context => (
-                <ul className="menu__list">
+                <ul className="menu__list" data-testid="menu-list">
                     {Object.entries(menu).map(( item, index ) => 
-                        <li key={index} className="menu__item">
+                        <li key={item} className="menu__item">
                             <Button className="header__link" onClick={() => { props.navigateTo(item[0]) }}>{item[1]}</Button>
                         </li>
                     )}

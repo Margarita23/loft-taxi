@@ -6,6 +6,6 @@ describe("App", () => {
   it("show first page - login", () => {
       const { getByTestId, getByText } = render(<App/>);
       // let comp = getByTestId("my-container");
-      // expect(null).toContainElement(getByText("Hello"));
+      // expect(comp).toContainElement(getByText("Hello"));
     });
 });
