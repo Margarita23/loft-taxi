@@ -1,3 +1,7 @@
+.order__wrapper {
+    position: relative;
+}
+
 .order__wrapper .map__control {
     position: absolute;
     width: 100%;
@@ -5,10 +9,10 @@
     display: inline-block;
     top: 0;
     z-index: -1;
-    background-position: center center;
-    background-size: cover;
-    background-image: url(../../assets/back-map.png);
-    background-color: rgb(50, 50, 50);
+    // background-position: center center;
+    // background-size: cover;
+    // background-image: url(../../assets/back-map.png);
+    // background-color: rgb(50, 50, 50);
 }
 
 .order__form {

@@ -12,23 +12,38 @@ const forms = {
 }
 
 class SignIn extends Component {
-    state = {signInForm: "login"};
+    state = {
+        signInForm: "login",
+        auth: false
+    };
 
     changeForm = (form) => {
         this.setState({signInForm: form});
+    }
+
+    createUser = (newUser, checkData, nextPage) => {
+        if(checkData){
+            this.props.navigateTo(nextPage);
+        }
+    }
+
+    authenticate = (user, canGo, nextPage) => {
+        if(canGo){
+            this.props.navigateTo(nextPage);
+        }
     }
 
     render() {
         const {login, reg} = forms;
         let trueForm;
         if(this.state.signInForm === login){
-            trueForm = <Login navigateTo={this.props.navigateTo} changeForm={this.changeForm}></Login>
+            trueForm = <Login authenticate={this.authenticate} changeForm={this.changeForm}></Login>
         } else if (this.state.signInForm === reg){
-            trueForm = <Reg navigateTo={this.props.navigateTo} changeForm={this.changeForm}></Reg>
+            trueForm = <Reg createUser={this.createUser} changeForm={this.changeForm}></Reg>
         }
-
+        
         return (
-            <div className="login__container">
+            <div className="login__container" data-testid="logo-container">
                 <Logo white></Logo>
                 {trueForm}
             </div>
