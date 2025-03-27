@@ -1,10 +1,30 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Button, Input, Link} from '@material-ui/core';
+import AuthContext from "../auth/auth-context";
+import PropTypes from 'prop-types';
 
-export default function Login(props) {
+function Login(props){
 
-    const {changeForm, navigateTo} = props;
-    
+    let context = useContext(AuthContext);
+
+    let handleChangeEmail = (event) => {
+        email = event.target.value;
+    }
+
+    let handleChangePass = (event) => {
+        password = event.target.value;
+    }
+
+    let loginCheck = (email, password, context) => {
+        let userLogged = true;
+        if(userLogged) {
+            context.login(email, password);
+        }
+        return context.isLoggedIn;
+    }
+
+    let {changeForm, authenticate, email, password} = props;
+
     return (
         <div className="login__form">
             <h3 className="login__title">Войти</h3>
@@ -14,14 +34,21 @@ export default function Login(props) {
             <div className="inputs__blocks">
                 <div className="login__block">
                     <label>Имя пользователя&#42;</label>
-                    <Input></Input>
+                    <Input data-testid="email-input" type="text" value={email} onChange={handleChangeEmail}></Input>
                 </div>
                 <div className="pass__block">
                     <label>Пароль&#42;</label>
-                    <Input></Input>
+                    <Input data-testid="password-input" type="password" value={password} onChange={handleChangePass}></Input>
                 </div>
             </div>
-            <Button variant="contained" color="primary" className="btn login__btn" onClick={() => { navigateTo("order") }}>Войти</Button>
+            <Button variant="contained" color="primary" className="btn login__btn" data-testid="button-login" onClick={() => { authenticate(null, loginCheck(email, password, context), "order") }}>Войти</Button>
         </div>
     )
 }
+
+// Login.propTypes = {
+//     email: PropTypes.string.isRequired,
+//     password: PropTypes.string.isRequired
+// } 
+
+export default Login;

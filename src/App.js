@@ -1,31 +1,42 @@
 import React, {Component} from 'react';
 import './App.scss';
 
-import SignIn from './pages/signin/signin';
 import Order from './pages/order/order';
 import Profile from './pages/profile/profile';
 
+import Auth from "./components/auth/auth";
+
 const pages = {
-   signin: "signin",
    order: "order",
    profile: "profile"
 }
 
 class App extends Component {
-   state = { currentPage: pages.signin };
+   constructor(props) {
+      super(props);
+      this.state = {
+         user: {},
+         currentPage: pages.order
+       }
+   }
    
    navigateTo = (page) => {
       this.setState({ currentPage: page});
    }
 
    render() {
-      const {signin, order, profile} = pages;
+      const {order, profile} = pages;
+      let currComponent = null;
       switch(this.state.currentPage){
-         case signin: return  <SignIn navigateTo={this.navigateTo}/>;
-         case order : return  <Order navigateTo={this.navigateTo}/>;
-         case profile : return  <Profile navigateTo={this.navigateTo}/>;
-         default : return null;
+         case order : currComponent = <Order navigateTo={this.navigateTo}/>; break;
+         case profile : currComponent = <Profile navigateTo={this.navigateTo}/>; break;
+         default : break;
       }
+      return (
+         <Auth navigateTo={this.navigateTo}>
+            { currComponent }
+         </Auth>
+      );
    }
 }
 

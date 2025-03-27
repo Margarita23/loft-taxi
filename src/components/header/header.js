@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <div className="wrapper header__wrapper">
         <div className="container">
-          <div className="header__block">
+          <div className="header__block" data-testid="header-block">
             <Logo></Logo>
             <nav className="menu__nav" id="header__menu">
               <Menu className="myMenu" parentId="menu__nav" navigateTo={this.props.navigateTo}></Menu>

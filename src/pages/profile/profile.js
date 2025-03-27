@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {MCIcon} from 'loft-taxi-mui-theme';
-import { Button} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 
 import Header from "../../components/header/header";
 
@@ -12,26 +12,26 @@ class Profile extends Component {
         <div className="wrapper profile__wrapper">
           <div className="container profile__container">
             <div className="profile__box">
-              <h3 className="profile__title">Профиль</h3>
+              <h3 className="profile__title" data-testid="page-title">Профиль</h3>
               <p className="profile__sub-title">Способ оплаты</p>
               <div className="profile__info">
                 <div className="profile__block">
                   <MCIcon className="mc-icon"></MCIcon>
                   <div className="profile__sub-block">
                     <label>Номер карты:</label>
-                    <input className="profile__input profile__input--number" type="number"></input>
+                    <input data-testid="card-number" className="profile__input profile__input--number" type="number"></input>
                     <div className="profile__btn-delete"></div>
                   </div>
                   <div className="profile__sub-block">
                     <label>Срок действия:</label>
-                    <input className="profile__input profile__input--short" placeholder="00/00"></input>
+                    <input data-testid="card-date" className="profile__input profile__input--short" placeholder="00/00"></input>
                     <div className="profile__btn-delete"></div>
                   </div>
                 </div>
                 <div className="profile__block">
                   <div className="profile__sub-block">
                     <label>Имя владельца:</label>
-                    <input className="profile__input profile__input--name"></input>
+                    <input data-testid="owner-name" className="profile__input profile__input--name"></input>
                     <div className="profile__btn-delete"></div>
                   </div>
                   <div className="profile__sub-block">
@@ -42,7 +42,7 @@ class Profile extends Component {
                         </div>
                       </div>
                     </label>  
-                    <input className="profile__input profile__input--short"></input>
+                    <input data-testid="card-cvv" className="profile__input profile__input--short"></input>
                     <div className="profile__eye-container">
                       <div className="profile__btn-show"></div>
                       <div className="profile__btn-notshow"></div>
@@ -50,7 +50,7 @@ class Profile extends Component {
                   </div>
                 </div>
               </div>
-              <Button variant="contained" color="primary" className="profile__save-btn">Сохранить</Button>
+              <Button data-testid="save-button" variant="contained" color="primary" className="profile__save-btn">Сохранить</Button>
             </div>
           </div>
           <div className="map__control"></div>
